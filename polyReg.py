@@ -16,6 +16,15 @@ def readPoints(filePath):
 			else:
 				points.append((px,py))
 	return points
+def getLValues(points, degree):
+	assert(degree > 0)
+	values = []
+	for n in range(0, degree + 1):
+		lsum = 0.0
+		for x, y in points:
+			lsum = lsum + (x**n) * y
+		values.append(lsum)
+	return values
 
 if __name__ == '__main__':
 	pass
